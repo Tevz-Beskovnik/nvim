@@ -12,6 +12,14 @@ M.dap = {
       "<cmd> DapContinue <CR>",
       "Start or continue the debugger",
     },
+    ["<leader>dj"] = {
+      "<cmd> DapStepOver <CR>",
+      "Jump over statement",
+    },
+    ["<leader>di"] = {
+      "<cmd> DapStepInto <CR>",
+      "Step into statement",
+    },
   }
 }
 
