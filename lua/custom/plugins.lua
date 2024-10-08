@@ -19,6 +19,13 @@ local plugins = {
     end
   },]]--
   {
+    "jose-elias-alvarez/null-ls.nvim",
+    ft = {"python"},
+    opts = function ()
+      return require "custom.configs.null-ls"
+    end,
+  },
+  {
     "rcarriga/nvim-dap-ui",
     event = "VeryLazy",
     dependencies = {
@@ -69,14 +76,24 @@ local plugins = {
     end,
   },
   {
+    "nvim-java/nvim-java"
+  },
+  {
+    "mfussenegger/nvim-jdtls"
+  },
+  {
     "williamboman/mason.nvim",
     opts = {
       ensure_installed = {
         "clangd",
         "codelldb",
         "rust-analyzer",
-      }
-    }
-  }
+        "jdtls",
+        "pyright",
+        "mypy",
+        "ruff",
+      },
+    },
+  },
 }
 return plugins

@@ -16,7 +16,7 @@ lspconfig.clangd.setup {
 lspconfig.rust_analyzer.setup({
     on_attach = on_attach,
     capabilities = capabilities,
-    filetypes = {"rust", "rs"},
+    filetypes = {"rust"},
     root_dir = util.root_pattern("Cargo.toml"),
     settings = {
         ['rust_analyzer'] = {
@@ -25,4 +25,10 @@ lspconfig.rust_analyzer.setup({
             }
         }
     }
+})
+
+lspconfig.pyright.setup({
+    on_attach = on_attach,
+    capabilities = capabilities,
+    filetypes =  {"python"},
 })
