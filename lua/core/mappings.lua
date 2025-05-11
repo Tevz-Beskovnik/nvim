@@ -292,6 +292,14 @@ M.telescope = {
   },
 }
 
+M.markview = {
+  plugin = true,
+  
+  n = {
+    ["<leader>mw"] = { "<cmd> Markview Toggle", "Toggle markview" }
+  }
+}
+
 M.nvterm = {
   plugin = true,
 

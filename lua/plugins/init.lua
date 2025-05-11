@@ -19,6 +19,11 @@ local default_plugins = {
   },
 
   {
+    "OXY2DEV/markview.nvim",
+    lazy = false
+  },
+
+  {
     "zbirenbaum/nvterm",
     init = function()
       require("core.utils").load_mappings "nvterm"
