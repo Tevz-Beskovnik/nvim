@@ -32,3 +32,13 @@ lspconfig.pyright.setup({
     capabilities = capabilities,
     filetypes =  {"python"},
 })
+
+lspconfig.ts_ls.setup({
+    on_attach = on_attach,
+    capabilities = capabilities,
+    init_options = {
+        preferences = {
+            disableSuggestions = true,
+        }
+    }
+})

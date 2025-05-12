@@ -92,6 +92,8 @@ local plugins = {
         "pyright",
         "mypy",
         "ruff",
+        "typescript-language-server",
+        "lua-language-server",
       },
     },
   },
