@@ -94,6 +94,7 @@ local plugins = {
         "ruff",
         "typescript-language-server",
         "lua-language-server",
+        "emmet-ls",
       },
     },
   },

@@ -42,3 +42,15 @@ lspconfig.ts_ls.setup({
         }
     }
 })
+
+lspconfig.emmet_ls.setup({
+    -- on_attach = on_attach,
+    capabilities = capabilities,
+    init_options = {
+        html = {
+            options = {
+                ["bem.embed"] = true,
+            },
+        },
+    }
+})
