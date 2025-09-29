@@ -2,38 +2,34 @@ local base = require("plugins.configs.lspconfig")
 local on_attach = base.on_attach
 local capabilities = base.capabilities
 
-local lspconfig = require("lspconfig")
-local util = require("lspconfig/util")
-
-lspconfig.clangd.setup {
+vim.lsp.config("clangd",{
   on_attach = function(client, bufnr)
     client.server_capabilities.signatureHelpProvider = false
     on_attach(client, bufnr)
   end,
   capabilities = capabilities,
-}
-
-lspconfig.rust_analyzer.setup({
-    on_attach = on_attach,
-    capabilities = capabilities,
-    filetypes = {"rust"},
-    root_dir = util.root_pattern("Cargo.toml"),
-    settings = {
-        ['rust_analyzer'] = {
-            cargo = {
-                allFeatures = true,
-            }
-        }
-    }
 })
 
-lspconfig.pyright.setup({
+vim.lsp.config("rust_analyzer", {
+    cmd = { "rust-analyzer" },
+	filetypes = { "rust" },
+	root_markers = { "Cargo.toml" },
+	settings = {
+		["rust-analyzer"] = {
+			diagnostics = {
+				enable = false,
+			},
+		},
+	},
+})
+
+vim.lsp.config("pyright", {
     on_attach = on_attach,
     capabilities = capabilities,
     filetypes =  {"python"},
 })
 
-lspconfig.ts_ls.setup({
+vim.lsp.config("ts_ls", {
     on_attach = on_attach,
     capabilities = capabilities,
     init_options = {
@@ -43,7 +39,7 @@ lspconfig.ts_ls.setup({
     }
 })
 
-lspconfig.emmet_ls.setup({
+vim.lsp.config("emmet_ls", {
     -- on_attach = on_attach,
     capabilities = capabilities,
     init_options = {
